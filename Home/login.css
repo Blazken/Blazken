@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #499bd6;
+}
+
+#container {
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #f6f6f6;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    /* overflow: hidden; */
+}
+
+#container .forms {
+    display: flex;
+    align-items: center;
+    width: 200%;
+    height: 440px;
+    /* background: red; */
+    transition: height 0.2s ease;
+}
+
+#container .form {
+    width: 50%;
+    padding: 30px;
+    background: #f6f6f6;
+    transition: margin-left 0.18s ease;
+}
+
+#container.active .login {
+    margin-left: -50%;
+    opacity: 0;
+    transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+#container .signup {
+    opacity: 0;
+    transition: opacity 0.09s ease;
+}
+
+#container.active .signup {
+    opacity: 1;
+    transition: opacity 0.2s ease;
+}
+
+#container.active .form {
+    height: 600px;
+}
+
+#container .form .title {
+    position: relative;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form .title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: 35px;
+    background: #499bd6;
+    border-radius: 25px;
+}
+
+.form .input-file {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input-file input {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 35px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid #ccc;
+    border-top: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.input-file i {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: #999;
+}
+
+.input-file input:is(:focus, :valid) {
+    border-bottom-color: #499bd6;
+}
+
+/* icon name */
+.input-file i.icon {
+    left: 0;
+}
+
+/* show/hide icon */
+.input-file .i.showhide {
+    right: 0;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.form .checkbox-text {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.checkbox-text .checkbox-contact {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-contact input {
+    accent-color: #499bd6;
+}
+
+.form a {
+    text-decoration: none;
+}
+
+.form a:hover {
+    text-decoration: underline;
+}
+
+.form .button {
+    margin-top: 35px;
+}
+
+.form .button input {
+    border: none;
+    color: #f6f6f6;
+    font-size: 17px;
+    font-weight: 500;
+    border-radius: 6px;
+    background: green;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.button input:hover {
+    background: #e81010;
+}
+
+.form .login-signup {
+    margin-top: 30px;
+    text-align: center;
+}
